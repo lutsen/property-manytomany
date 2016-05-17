@@ -1,7 +1,7 @@
 [<img src="https://cdn.rawgit.com/lutsen/lagan/master/lagan-logo.svg" width="100" alt="Lagan">](https://github.com/lutsen/lagan)
 
-Lagan One-to-many Property Controller
-=====================================
+Lagan Many-to-many Property Controller
+======================================
 
 Controller for the Lagan many-to-many property.  
 Lets the user define a many-to-many relation between two content entries.
