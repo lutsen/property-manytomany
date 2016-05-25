@@ -24,7 +24,7 @@ class manytomany {
 	 * @param array		$property	Lagan model property arrray.
 	 * @param integer[]	$new_value	An array with id's of the objects the object with this property has a many-to-many relation with.
 	 *
-	 * @return boolean	Returns false because a many-to-many relation is automaticaly stored in a separate database table
+	 * @return boolean	Returns a boolean because a many-to-many relation is automaticaly stored in a separate database table. Returns true if any relations are set, false if not.
 	 */
 	public function set($bean, $property, $new_value) {
 
@@ -35,10 +35,18 @@ class manytomany {
 			}
 		}
 
-		$bean->{ 'shared'.ucfirst($property['name']).'List' } = $list;
-		\R::store($bean);
+		if ( count( $list ) > 0 ) {
 
-		return false;
+			$bean->{ 'shared'.ucfirst($property['name']).'List' } = $list;
+			\R::store($bean);
+
+			return true;
+
+		} else {
+
+			return false;
+
+		}
 
 	}
 
