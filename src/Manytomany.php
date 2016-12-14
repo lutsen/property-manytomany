@@ -15,7 +15,7 @@ namespace Lagan\Property;
  * To be used with Lagan: https://github.com/lutsen/lagan
  */
 
-class manytomany {
+class Manytomany {
 
 	/**
 	 * The set method is executed each time a property with this type is set.
@@ -31,7 +31,7 @@ class manytomany {
 		$list = [];
 		foreach ($new_value as $id) {
 			if ($id) {
-				$list[] = \R::load(  $property['name'], $id );
+				$list[] = \R::load( $property['name'], $id );
 			}
 		}
 
